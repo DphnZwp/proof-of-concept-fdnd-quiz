@@ -61,40 +61,16 @@ a {
   display: inline-block;
 }
 
-.question {
+.question-container {
   padding: 2em;
-  margin-top: 2em;
-  margin-bottom: 1em;
   background-color: var(--purple);
   border-radius: var(--pilled);
 }
 
-.answers {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2em;
+.question {
+  color: var(--blue);
 }
 
-.answer-container {
-  padding: 1em;
-  display: flex;
-  align-items: center;
-  background-color: var(--white);
-  border-radius: var(--pilled);
-}
-
-.answer-prefix {
-  padding: .6rem 1.2rem;
-  font-weight: 600;
-  background-color: var(--blue);
-  color: var(--green);
-  border-radius: var(--pilled);
-}
-
-.answer-text {
-  padding-left: 1em;
-}
-
-.hidden {
-  display: none;
+.score-board {
+  margin-top: 1em;
 }

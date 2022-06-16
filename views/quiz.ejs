@@ -2,27 +2,17 @@
 
 <main>
   <section class="question-container">
-    <h2 class="question"></h2>
+    <h1 class="question"></h1>
+    <p class="score-board">
+      <span class="score-number">0</span>/<span class="answered-number">0</span>
+    </p>
   </section>
 
-  <section class="answers">
-    <article class="answer-container">
-      <p class="answer-prefix">A</p>
-      <p class="answer-text"></p>
-    </article>
-    <article class="answer-container">
-      <p class="answer-prefix">B</p>
-      <p class="answer-text"></p>
-    </article>
-    <article class="answer-container">
-      <p class="answer-prefix">C</p>
-      <p class="answer-text">Antwoord 3</p>
-    </article>
-    <article class="answer-container">
-      <p class="answer-prefix">D</p>
-      <p class="answer-text" data-number="4">Antwoord 4</p>
-    </article>
-  </section>
+  <form class="quiz-form">
+    <div class="all-options">
+    </div>
+    <button type="submit">Submit</button>
+  </form>
 </main>
 
 <%- include('partials/footer.ejs') %>
