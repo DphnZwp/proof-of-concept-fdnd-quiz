@@ -53,7 +53,7 @@ function generateTemplate(question, options) {
     item.classList.add("option")
     item.innerHTML = `
     <input type="radio" id="option${index + 1}" value="${option}" name="quiz">
-    <label for="option${index + 1}">${index + 1} ${option}</label>
+    <label class="option-label" for="option${index + 1}">${index + 1} ${option}</label>
   `
     optionsEl.appendChild(item)
   })
