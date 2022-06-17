@@ -12,7 +12,7 @@ let answeredQuestion = 0
 
 quizApp()
 
-async function fetchQuiz(){
+async function fetchQuiz() {
   const response = await fetch(baseURL)
   const data = await response.json()
   // console.log(data.results)
@@ -35,11 +35,10 @@ async function quizApp() {
 form.addEventListener('submit', (e) => {
   e.preventDefault()
 
-  if(e.target.quiz.value){
+  if(e.target.quiz.value) {
     checkQuiz(e.target.quiz.value)
     e.target.querySelector('button').style.display = 'none'
-    // generateFinishButton()
-  }else{
+  } else {
     return
   }
 })
@@ -60,26 +59,20 @@ function renderQuiz(question, options) {
   })
 }
 
-function checkQuiz (selected){
+function checkQuiz (selected) {
   answeredQuestion++
-  if(selected === answer){
+  if(selected === answer) {
     score++
   }
   updateScoreBoard()
   form.quiz.forEach(input => {
-    if(input.value === answer){
+    if(input.value === answer) {
       input.parentElement.classList.add('correct')
     }
   })
 }
 
-function updateScoreBoard(){
+function updateScoreBoard() {
   scoreEl.innerText = score
   answeredEl.innerText = answeredQuestion
 }
-
-// function generateFinishButton() {
-//   const finishButton = document.createElement('button')
-//   finishButton.innerText = 'Finish'
-//   finishButton.setAttribute('')
-// }
