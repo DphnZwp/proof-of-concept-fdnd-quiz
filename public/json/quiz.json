@@ -1,0 +1,133 @@
+[
+  {
+    "quizId": 1,
+    "questionId": 1,
+    "category": "Geography",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "What is my favorite sport?",
+    "correct_answer": "Kickboxing",
+    "incorrect_answers": [
+    "Tennis",
+    "Horse riding",
+    "Soccer"
+    ]
+  },
+  {
+    "quizId": 2,
+    "category": "Geography",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Vraag 2?",
+    "correct_answer": "kickboxing",
+    "incorrect_answers": [
+    "tennis",
+    "horse riding",
+    "soccer"
+    ]
+  },
+  {
+    "quizId": 3,
+    "category": "Geography",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Vraag 3?",
+    "correct_answer": "kickboxing",
+    "incorrect_answers": [
+    "tennis",
+    "horse riding",
+    "soccer"
+    ]
+  },
+  {
+    "quizId": 4,
+    "category": "Geography",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Vraag 4?",
+    "correct_answer": "kickboxing",
+    "incorrect_answers": [
+    "tennis",
+    "horse riding",
+    "soccer"
+    ]
+  },
+  {
+    "quizId": 5,
+    "category": "Geography",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Vraag 5?",
+    "correct_answer": "kickboxing",
+    "incorrect_answers": [
+    "tennis",
+    "horse riding",
+    "soccer"
+    ]
+  },
+  {
+    "quizId": 6,
+    "category": "Geography",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Vraag 6?",
+    "correct_answer": "kickboxing",
+    "incorrect_answers": [
+    "tennis",
+    "horse riding",
+    "soccer"
+    ]
+  },
+  {
+    "quizId": 7,
+    "category": "Geography",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Vraag 7?",
+    "correct_answer": "kickboxing",
+    "incorrect_answers": [
+    "tennis",
+    "horse riding",
+    "soccer"
+    ]
+  },
+  {
+    "quizId": 8,
+    "category": "Geography",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Vraag 8?",
+    "correct_answer": "kickboxing",
+    "incorrect_answers": [
+    "tennis",
+    "horse riding",
+    "soccer"
+    ]
+  },
+  {
+    "quizId": 9,
+    "category": "Geography",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Vraag 9?",
+    "correct_answer": "kickboxing",
+    "incorrect_answers": [
+    "tennis",
+    "horse riding",
+    "soccer"
+    ]
+  },
+  {
+    "quizId": 10,
+    "category": "Geography",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Vraag 10?",
+    "correct_answer": "kickboxing",
+    "incorrect_answers": [
+    "tennis",
+    "horse riding",
+    "soccer"
+    ]
+  }
+]

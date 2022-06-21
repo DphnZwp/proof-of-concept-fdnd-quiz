@@ -206,3 +206,6 @@ form .option.correct {
   background-color: var(--turquoise);
 }
 
+.dissapear {
+  display: none;
+}
