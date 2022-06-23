@@ -2,132 +2,126 @@
   {
     "quizId": 1,
     "questionId": 1,
-    "category": "Geography",
     "type": "multiple",
-    "difficulty": "hard",
     "question": "What is my favorite sport?",
-    "correct_answer": "Kickboxing",
+    "correct_answer": "Cascade Style Sheets",
     "incorrect_answers": [
-    "Tennis",
-    "Horse riding",
-    "Soccer"
+    "Color Style Sheets",
+    "Cascade Sheets Style",
+    "Cascade Style Sheet"
     ]
   },
   {
     "quizId": 2,
-    "category": "Geography",
+    "questionId": 2,
     "type": "multiple",
-    "difficulty": "hard",
-    "question": "Vraag 2?",
-    "correct_answer": "kickboxing",
+    "question": "Welke van deze tags weergeeft de grootste tekst?",
+    "correct_answer": "<h1>",
     "incorrect_answers": [
-    "tennis",
-    "horse riding",
-    "soccer"
+    "<p>",
+    "<h4>",
+    "<h6>"
     ]
   },
   {
     "quizId": 3,
-    "category": "Geography",
+    "questionId": 3,
     "type": "multiple",
-    "difficulty": "hard",
-    "question": "Vraag 3?",
+    "question": "Wat is het verschil tussen HTML en CSS?",
     "correct_answer": "kickboxing",
     "incorrect_answers": [
-    "tennis",
-    "horse riding",
-    "soccer"
+    "antwoord 3",
+    "antwoord 3",
+    "antwoord 3"
     ]
   },
   {
     "quizId": 4,
-    "category": "Geography",
+    "questionId": 4,
     "type": "multiple",
-    "difficulty": "hard",
     "question": "Vraag 4?",
     "correct_answer": "kickboxing",
     "incorrect_answers": [
-    "tennis",
-    "horse riding",
-    "soccer"
+    "antwoord 4",
+    "antwoord 4",
+    "antwoord 4"
     ]
   },
   {
     "quizId": 5,
-    "category": "Geography",
+    "questionId": 5,
     "type": "multiple",
-    "difficulty": "hard",
     "question": "Vraag 5?",
     "correct_answer": "kickboxing",
     "incorrect_answers": [
-    "tennis",
-    "horse riding",
-    "soccer"
+    "antwoord 5",
+    "antwoord 5",
+    "antwoord 5"
     ]
   },
   {
     "quizId": 6,
+    "questionId": 6,
     "category": "Geography",
     "type": "multiple",
-    "difficulty": "hard",
     "question": "Vraag 6?",
     "correct_answer": "kickboxing",
     "incorrect_answers": [
-    "tennis",
-    "horse riding",
-    "soccer"
+    "antwoord 6",
+    "antwoord 6",
+    "antwoord 6"
     ]
   },
   {
     "quizId": 7,
+    "questionId": 7,
     "category": "Geography",
     "type": "multiple",
-    "difficulty": "hard",
     "question": "Vraag 7?",
     "correct_answer": "kickboxing",
     "incorrect_answers": [
-    "tennis",
-    "horse riding",
-    "soccer"
+    "antwoord 7",
+    "antwoord 7",
+    "antwoord 7"
     ]
   },
   {
     "quizId": 8,
+    "questionId": 8,
     "category": "Geography",
     "type": "multiple",
-    "difficulty": "hard",
     "question": "Vraag 8?",
     "correct_answer": "kickboxing",
     "incorrect_answers": [
-    "tennis",
-    "horse riding",
-    "soccer"
+    "antwoord 8",
+    "antwoord 8",
+    "antwoord 8"
     ]
   },
   {
     "quizId": 9,
+    "questionId": 9,
     "category": "Geography",
     "type": "multiple",
-    "difficulty": "hard",
     "question": "Vraag 9?",
     "correct_answer": "kickboxing",
     "incorrect_answers": [
-    "tennis",
-    "horse riding",
-    "soccer"
+    "antwoord 9",
+    "antwoord 9",
+    "antwoord 9"
     ]
   },
   {
     "quizId": 10,
+    "questionId": 10,
     "category": "Geography",
     "type": "multiple",
-    "difficulty": "hard",
     "question": "Vraag 10?",
     "correct_answer": "kickboxing",
     "incorrect_answers": [
-    "tennis",
-    "horse riding",
-    "soccer"
+    "antwoord 10",
+    "antwoord 10",
+    "antwoord 10"
     ]
   }
 ]
