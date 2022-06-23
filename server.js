@@ -37,10 +37,13 @@ app.get('/quiz', (request, response) => {
   fetchJson(url).then(function (
     jsonData
   ) {
+    const answers = jsonData.data.map((value) => {
+      return value.incorrect_answer
+    })
+    console.log(answers)
     response.render('quiz', {
       questions: jsonData.data,
-      rightAnswer: jsonData.data[0].correct,
-      possibleAnswers: jsonData.data[0].incorrect_answer,
+      possibleAnswers: answers,
     })
   })
 })
