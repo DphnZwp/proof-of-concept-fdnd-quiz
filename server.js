@@ -59,8 +59,8 @@ const server = app.listen(PORT, () => {
 })
 
 // Fetch
-async function fetchJson(url, postData = {}) {
-  return await fetch(url, postData)
+async function fetchJson(url, jsonData = {}) {
+  return await fetch(url, jsonData)
     .then((response) => response.json())
     .catch((error) => error)
 }
