@@ -34,13 +34,17 @@ app.get('/', (request, response) => {
 // })
 
 app.get('/quiz/:question_id', (request, response) => {
-  fetchJson(`${url}/${request.params.question_id}`).then(function (
-    jsonData
-  ) {
-    response.render('quiz', {
-      data: jsonData.data,
-      links: jsonData.data[0],
-    })
+  fetchJson(`${url}/${request.params.question_id}`).then((jsonData) => {
+    let data = jsonData.data[0]
+    let answers = [...data.incorrect_answer.split(','), data.correct_answer]
+
+    if(data.type == 'MC') {
+      response.render('question-mc', {
+        question: data.question,
+        answers: shuffle(answers)
+      })
+    } // hier kan je nog meer soorten vragen renderen.
+    
   })
 })
 
@@ -63,4 +67,25 @@ async function fetchJson(url, jsonData = {}) {
   return await fetch(url, jsonData)
     .then((response) => response.json())
     .catch((error) => error)
+}
+
+
+
+// Fisher-Yates shuffle: https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex != 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
 }
