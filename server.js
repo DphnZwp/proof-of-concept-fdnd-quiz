@@ -33,17 +33,13 @@ app.get('/', (request, response) => {
 //     response.render('quiz-aanmaken')
 // })
 
-app.get('/quiz', (request, response) => {
-  fetchJson(url).then(function (
+app.get('/quiz/:question_id', (request, response) => {
+  fetchJson(`${url}/${request.params.question_id}`).then(function (
     jsonData
   ) {
-    const answers = jsonData.data.map((value) => {
-      return value.incorrect_answer
-    })
-    console.log(answers)
     response.render('quiz', {
-      questions: jsonData.data,
-      possibleAnswers: answers,
+      data: jsonData.data,
+      links: jsonData.data[0],
     })
   })
 })

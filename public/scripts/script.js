@@ -5,7 +5,7 @@ const form = document.querySelector(".quiz-form")
 // const optionsEl = document.querySelector(".all-options")
 const scoreEl = document.querySelector(".score-board .score-number")
 const answeredEl = document.querySelector(".score-board .answered-number")
-// const nextButton = document.querySelector(".nextButton")
+const nextButton = document.querySelector(".nextButton")
 
 let score = 0
 let answeredQuestion = 0
@@ -15,6 +15,15 @@ async function fetchQuiz() {
   const data = await response.json()
   options = data.data
 }
+
+//   fetch(apiBase, {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify(data),
+//   })
+// })
 
 // async function getCurrentQuestionIndex(questionId) {
 //   await fetchQuiz()
@@ -46,13 +55,6 @@ async function fetchQuiz() {
 //     </label>
 //   `
 //     optionsEl.appendChild(item)
-//   })
-// }
-
-// function nextQuestion() {
-//   nextButton.addEventListener('click', () => {
-//     // Change currentIndex into nextIndex
-//     console.log('Ga naar de volgende vraag en antwoorden')
 //   })
 // }
 
