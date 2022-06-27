@@ -12,11 +12,12 @@
                 </h2>
             </article>
             <form class="quiz-form">
+                <input type="hidden" name="question_id" value="<%- question_id %>">
                 <div class="all-options">
                     <div class="option">
                         <% for(let i = 0; i < answers.length; i++){ %>
-                        <input type="radio" id="option{%- i %}" value="<%- answers[i] %>" name="quiz">
-                        <label class="label-bold" for="option{%- i %}">
+                        <input type="radio" id="option<%- i %>" value="<%- answers[i] %>" name="quiz">
+                        <label class="label-bold" for="option<%- i %>">
                             <span class="letter">
                             </span>
                             <%- answers[i] %>

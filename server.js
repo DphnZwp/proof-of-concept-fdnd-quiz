@@ -40,6 +40,7 @@ app.get('/quiz/:question_id', (request, response) => {
 
     if(data.type == 'MC') {
       response.render('question-mc', {
+        question_id: data.question_id,
         question: data.question,
         answers: shuffle(answers)
       })
