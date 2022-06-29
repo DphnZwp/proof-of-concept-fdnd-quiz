@@ -29,27 +29,14 @@
     <div class="form-background">
       <h2>Maak een quiz</h2>
       <form class="post-form" action="/quiz-aanmaken" method="post">
-        <label for="question_id">question_id</label>
-        <input type="number" name="question_id" id="question_id" />
         <label for="quiz_id">quiz_id</label>
         <input type="number" name="quiz_id" id="quiz_id" />
-        <label for="type">Type vragen</label>
-        <select type="text" name="type">
-          <option value="Meerkeuze">Meerkeuze</option>
-        </select>
-        <label for="question">Vraag</label>
-        <input type="text" list="ice-cream-flavors" id="question" name="question" autocomplete="off" />
-        <datalist id="ice-cream-flavors">
-          <% data.forEach(element => { %>
-            <option value="<%- element.question %>">
-        <% }) %>
-          </datalist>
-        <label for="correct_answer">Goede antwoord</label>
-        <input type="text" name="correct_answer" />
-        <label for="incorrect_answer">Foute antwoorden</label>
-        <input type="text" name="incorrect_answer" id="incorrect_answer" />
-        <label for="feedback">Feedback</label>
-        <input type="text" name="feedback" id="feedback" />
+        <label for="name">Quiz naam</label>
+        <input type="text" name="name" id="name" />
+        <label for="category">Categorie</label>
+        <input type="text" name="category" id="category" />
+        <label for="image">Afbeelding</label>
+        <input type="text" name="image" id="image" />
         <label for="created_at">Datum</label>
         <input type="date" name="created_at" id="created_at" />
         <div class="form-buttons">
@@ -57,7 +44,7 @@
           <button type="reset">Annuleren</button>
         </div>
       </form>
-      <a class="link-button-blue" href="">Maak vragen en antwoorden</a>
+      <a class="link-button-blue" href="/vragen-aanmaken">Maak vragen en antwoorden</a>
     </div>
     <img src="/assets/css-quiz-image.png" alt="">
   </section>

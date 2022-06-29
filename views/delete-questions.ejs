@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/style.css" />
+  <!-- Scripts -->
+  <title>FDND Quiz</title>
+</head>
+
+<body class="blue-on-green">
+  <header>
+  </header>
+
+<main>
+  <article class="create-quiz">
+    <h1>Quiz en vragen verwijderen</h1>
+    <p>Verwijder hier een quiz en vragen. Druk op “Bekijk de quiz” om je quizzen te bekijken.</p>
+    <div class="form-buttons">
+      <a class="link-button" href="/">Terug naar quizzen</a>
+    </div>
+  </article>
+
+  <section class="form-container">
+    <div class="form-background">
+      <h2>Maak vragen</h2>
+      <form class="post-form" action="/vragen-verwijderen" method="post">
+        <label for="question_id">question_id</label>
+        <input type="number" name="question_id" />
+        <div class="form-buttons">
+          <button type="submit">Verwijder vraag</button>
+          <button type="reset">Annuleren</button>
+        </div>
+      </form>
+      <a class="link-button-blue" href="/">Ga naar je quizzen</a>
+    </div>
+    <img src="/assets/css-quiz-image.png" alt="">
+  </section>
+</main>
+
+<footer>
+</footer>
+
+</body>
+</html>

@@ -1,34 +1,34 @@
 <%- include('partials/header.ejs') %>
 
-    <main>
-        <section class="quiz">
-            <article class="question-container">
-                <h1 class="question">
-                    <%- question %>
-                </h1>
-                <h2 class="score-board">
-                    Jouw score:
-                    <span class="score-number">0</span>/<span class="answered-number">0</span>
-                </h2>
-            </article>
-            <form class="quiz-form">
-                <div class="all-options">
-                    <div class="option">
-                        <% for(let i = 0; i < answers.length; i++){ %>
-                        <input type="radio" id="option{%- i %}" value="<%- answers[i] %>" name="quiz">
-                        <label class="label-bold" for="option{%- i %}">
-                            <span class="letter">
-                            </span>
-                            <%- answers[i] %>
-                        </label>
-                        <% } %>
-                    </div>
-                </div>
-                <div class="form-buttons">
-                    <button type="submit">Verstuur</button>
-                </div>
-            </form>
-        </section>
-    </main>
+<main>
+  <section class="quiz">
+    <article class="question-container">
+      <h1 class="question">
+          <%- question %>
+      </h1>
+      <h2 class="score-board">
+          Jouw score:
+          <span class="score-number">0</span>/<span class="answered-number">0</span>
+      </h2>
+    </article>
+    <form class="quiz-form">
+      <div class="all-options">
+        <% for(let i = 0; i < answers.length; i++){ %>
+        <div class="option">
+          <input type="radio" id="option<%- i + 1 %>" value="<%- answers[i] %>" name="quiz">
+          <label for="option<%- i + 1 %>">
+            <%- String.fromCharCode(96 + i + 1).toUpperCase() %>
+            <%- answers[i] %>
+          </label>
+        </div>
+        <% } %>
+      </div>
+      <div class="form-buttons">
+        <button type="submit">Verstuur</button>
+        <a href="/quiz/<%- links + 1 %>">Volgende vraag</a>
+      </div>
+    </form>
+  </section>
+</main>
 
-    <%- include('partials/footer.ejs') %>
+<%- include('partials/footer.ejs') %>

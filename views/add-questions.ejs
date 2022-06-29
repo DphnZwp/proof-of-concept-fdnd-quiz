@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/style.css" />
+  <!-- Scripts -->
+  <title>FDND Quiz</title>
+</head>
+
+<body class="blue-on-green">
+  <header>
+  </header>
+
+<main>
+  <article class="create-quiz">
+    <h1>Quiz en vragen aanmaken</h1>
+    <p>Maak hier een nieuwe quiz en vragen. Druk op “Bekijk de quiz” om je quizzen te bekijken.</p>
+    <div class="form-buttons">
+      <a class="link-button" href="/quiz-aanmaken">Terug naar quiz maken</a>
+    </div>
+  </article>
+
+  <section class="form-container">
+    <div class="form-background">
+      <h2>Maak vragen</h2>
+      <form class="post-form" action="/vragen-aanmaken" method="post">
+        <label for="question_id">question_id</label>
+        <input type="number" name="question_id" id="question_id" />
+        <label for="quiz_id">quiz_id</label>
+        <input type="number" name="quiz_id" id="quiz_id" />
+        <label for="type">Type vragen</label>
+        <select type="text" name="type">
+          <option value="Meerkeuze">Meerkeuze</option>
+        </select>
+        <label for="question">Vraag</label>
+        <input type="text" list="questions" id="question" name="question" autocomplete="off" />
+        <label for="correct_answer">Goede antwoord</label>
+        <input type="text" name="correct_answer" autocomplete="off" />
+        <label for="incorrect_answer">Foute antwoorden</label>
+        <input type="text" name="incorrect_answer" id="incorrect_answer" autocomplete="off" />
+        <label for="feedback">Feedback</label>
+        <input type="text" name="feedback" id="feedback" autocomplete="off" />
+        <label for="created_at">Datum</label>
+        <input type="date" name="created_at" id="created_at" />
+        <div class="form-buttons">
+          <button type="submit">Voeg de quiz toe</button>
+          <button type="reset">Annuleren</button>
+        </div>
+      </form>
+      <a class="link-button-blue" href="/">Ga naar je quizzen</a>
+    </div>
+    <img src="/assets/css-quiz-image.png" alt="">
+  </section>
+</main>
+
+<footer>
+</footer>
+
+</body>
+</html>

@@ -2,9 +2,9 @@ const express = require('express')
 const path = require('path')
 const compression = require('compression')
 const app = express()
-const PORT = process.env.PORT || 9000
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args))
 const url = 'https://quiz.api.fdnd.nl/v1/question'
+const quizUrl = 'https://quiz.api.fdnd.nl/v1/quiz'
 const bodyParser = require('body-parser')
 const urlencodedParser = bodyParser.urlencoded({extended:false})
 
@@ -17,34 +17,90 @@ app.get('/', (request, response) => {
   response.render('index')
 })
 
-// POST form
-// app.post('/quiz-aanmaken', urlencodedParser, (request,response) =>{
-//   const postData = {
-//     method: 'post',
-//     body: JSON.stringify(request.body),
-//     headers: {'Content-Type': 'application/json'}
-//   }
-//   fetchJson(url, postData).then(function () {
-//     response.render('quiz-aanmaken')
-//   })
-// })
+// POST quiz
+app.post('/quiz-aanmaken', urlencodedParser, (request, response) =>{
+  const postData = {
+    method: 'POST',
+    body: JSON.stringify(request.body),
+    headers: {'Content-Type': 'application/json'}
+  }
+  fetchJson(quizUrl, postData).then(function () {
+    response.render('add')
+  })
+})
 
-// app.get('/quiz-aanmaken', (request, response) => {
-//     response.render('quiz-aanmaken')
-// })
+app.get('/quiz-aanmaken', (request, response) => {
+    response.render('add')
+})
+
+// POST question
+app.post('/vragen-aanmaken', urlencodedParser, (request, response) => {
+  const postData = {
+    method: 'post',
+    body: JSON.stringify(request.body),
+    headers: {'Content-Type': 'application/json'}
+  }
+  fetchJson(url, postData).then((jsonData) => {
+    response.render('add-questions')
+  })
+})
+
+app.get('/vragen-aanmaken', async (request, response) => {
+    response.render('add-questions')
+})
+
+// DELETE quiz
+app.post('/quiz-verwijderen', urlencodedParser, (request, response) =>{
+  const postData = {
+    method: 'delete',
+    body: JSON.stringify(request.body),
+    headers: {'Content-Type': 'application/json'}
+  }
+  fetchJson(quizUrl, postData).then(function () {
+    response.render('delete', {
+      title: 'Smart zone toevoegen',
+    })
+  })
+})
+
+app.get('/quiz-verwijderen', (request, response) => {
+    response.render('delete', {
+      title: 'Smart zone toevoegen',
+    })
+})
+
+// DELETE question
+app.post('/vragen-verwijderen', urlencodedParser, (request, response) =>{
+  const postData = {
+    method: 'delete',
+    body: JSON.stringify(request.body),
+    headers: {'Content-Type': 'application/json'}
+  }
+  fetchJson(url, postData).then(function () {
+    response.render('delete', {
+      title: 'Smart zone toevoegen',
+    })
+  })
+})
+
+app.get('/vragen-verwijderen', (request, response) => {
+    response.render('delete', {
+      title: 'Smart zone toevoegen',
+    })
+})
 
 app.get('/quiz/:question_id', (request, response) => {
   fetchJson(`${url}/${request.params.question_id}`).then((jsonData) => {
     let data = jsonData.data[0]
+    console.log(data);
     let answers = [...data.incorrect_answer.split(','), data.correct_answer]
-
-    if(data.type == 'MC') {
+    if(data.type == 'MC' || data.type == 'Meerkeuze') {
       response.render('question-mc', {
         question: data.question,
-        answers: shuffle(answers)
+        answers: shuffle(answers),
+        links: data.question_id,
       })
     } // hier kan je nog meer soorten vragen renderen.
-    
   })
 })
 
@@ -58,18 +114,24 @@ app.use((req, res, next) => {
 app.use(compression())
 
 // Server port
-const server = app.listen(PORT, () => {
-  console.log(`Application started on port: ${PORT}`)
+app.set('port', process.env.PORT || 9000)
+
+const server = app.listen(app.get('port'), () => {
+  console.log(`Application started on port: ${app.get('port')}`)
 })
 
 // Fetch
-async function fetchJson(url, jsonData = {}) {
-  return await fetch(url, jsonData)
+async function fetchJson(quizUrl, postData = {}) {
+  return await fetch(quizUrl, postData)
     .then((response) => response.json())
     .catch((error) => error)
 }
 
-
+async function fetchJson(url, postData = {}) {
+  return await fetch(url, postData)
+    .then((response) => response.json())
+    .catch((error) => error)
+}
 
 // Fisher-Yates shuffle: https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
 function shuffle(array) {
