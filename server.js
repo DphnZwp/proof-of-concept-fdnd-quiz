@@ -96,6 +96,7 @@ app.get('/quiz/:question_id', (request, response) => {
     let answers = [...data.incorrect_answer.split(','), data.correct_answer]
     if(data.type == 'MC' || data.type == 'Meerkeuze') {
       response.render('question-mc', {
+        question_id: data.question_id,
         question: data.question,
         answers: shuffle(answers),
         links: data.question_id,
