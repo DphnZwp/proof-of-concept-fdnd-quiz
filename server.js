@@ -94,14 +94,21 @@ app.get('/quiz/:question_id', (request, response) => {
     let data = jsonData.data[0]
     console.log(data);
     let answers = [...data.incorrect_answer.split(','), data.correct_answer]
-    if(data.type == 'MC' || data.type == 'Meerkeuze') {
+    if(data.type == 'Meerkeuze') {
       response.render('question-mc', {
-        question_id: data.question_id,
         question: data.question,
         answers: shuffle(answers),
-        links: data.question_id,
+        next: data.question_id,
+        data: data,
       })
-    } // hier kan je nog meer soorten vragen renderen.
+    }
+    if(data.type == 'Open vraag') {
+      response.render('question-mc', {
+        question: data.question,
+        next: data.question_id,
+        data: data,
+      })
+    }
   })
 })
 
@@ -122,17 +129,23 @@ const server = app.listen(app.get('port'), () => {
 })
 
 // Fetch
-async function fetchJson(quizUrl, postData = {}) {
-  return await fetch(quizUrl, postData)
+async function fetchJson(quizUrl) {
+  return await fetch(quizUrl)
     .then((response) => response.json())
     .catch((error) => error)
 }
 
-async function fetchJson(url, postData = {}) {
-  return await fetch(url, postData)
-    .then((response) => response.json())
-    .catch((error) => error)
+/**
+ * Wraps the fetch api and returns the response body parsed through json
+ * @param {*} url the api endpoint to address
+ * @returns the json response from the api endpoint
+ */
+ async function fetchJson(url) {
+	return await fetch(url)
+		.then((response) => response.json())
+		.catch((error) => error);
 }
+
 
 // Fisher-Yates shuffle: https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
 function shuffle(array) {

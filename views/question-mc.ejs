@@ -25,7 +25,11 @@
       </div>
       <div class="form-buttons">
         <button type="submit">Verstuur</button>
-        <a href="/quiz/<%- links + 1 %>">Volgende vraag</a>
+        <% if(data.question_id === 7){ %>
+          <a href="/resultaten">Resultaten</a>
+          <% } else { %>
+            <a href="/quiz/<%- next + 1 %>">Volgende vraag</a>
+          <% } %>
       </div>
     </form>
   </section>

@@ -18,14 +18,15 @@ form.addEventListener('submit', (e) => {
   e.preventDefault()
   if(e.target.quiz.value) {
     checkQuiz(e.target.quiz.value)
+    // console.log(e.target.quiz.value)
   } else {
-    return
+    alert("selecteer een antwoord")
   }
 })
 
 async function checkQuiz (selected) {
   await fetchQuiz()
-  rightAnswer = options[0].correct_answer
+  const rightAnswer = options[0].correct_answer
   answeredQuestion++
   if(selected === rightAnswer) {
     score++

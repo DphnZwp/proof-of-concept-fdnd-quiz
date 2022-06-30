@@ -371,6 +371,10 @@ input[type=date] {
   line-height: 1.3;
 }
 
+.quiz-information h1 {
+  margin-bottom: .5rem;
+}
+
 .quizzes {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -379,7 +383,7 @@ input[type=date] {
 
 .quizzes article {
   padding: 2rem;
-  bottom: -2rem;
+  height: min-content;
   color: var(--blueberry);
   background-color: var(--lavender);
   border-radius: var(--pilled);
@@ -387,6 +391,7 @@ input[type=date] {
 
 .quizzes img {
   width: 100%;
+  height: 14.65rem;
   border-radius: var(--pilled);
 }
 
