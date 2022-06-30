@@ -1,10 +1,9 @@
 const express = require('express')
-const app = express()
 const router = express.Router()
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args))
 const url = 'https://quiz.api.fdnd.nl/v1/question'
 
-app.get('/quiz/:question_id', (request, response) => {
+router.get('/quiz/:question_id', (request, response) => {
   fetchJson(`${url}/${request.params.question_id}`).then((jsonData) => {
     let data = jsonData.data[0]
     console.log(data);

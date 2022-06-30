@@ -1,5 +1,4 @@
 const express = require('express')
-const app = express()
 const router = express.Router()
 const bodyParser = require('body-parser')
 const urlencodedParser = bodyParser.urlencoded({extended:false})
@@ -8,7 +7,7 @@ const url = 'https://quiz.api.fdnd.nl/v1/question'
 const quizUrl = 'https://quiz.api.fdnd.nl/v1/quiz'
 
 // DELETE quiz
-app.post('/quiz-verwijderen', urlencodedParser, (request, response) =>{
+router.post('/quiz-verwijderen', urlencodedParser, (request, response) =>{
   const postData = {
     id: request.body.quiz_id
   }
@@ -23,12 +22,12 @@ app.post('/quiz-verwijderen', urlencodedParser, (request, response) =>{
   })
 })
 
-app.get('/quiz-verwijderen', (request, response) => {
+router.get('/quiz-verwijderen', (request, response) => {
     response.render('delete')
 })
 
 // DELETE question
-app.post('/vragen-verwijderen', urlencodedParser, (request, response) =>{
+router.post('/vragen-verwijderen', urlencodedParser, (request, response) =>{
   const postData = {
     id: request.body.quiz_id
   }
@@ -43,7 +42,7 @@ app.post('/vragen-verwijderen', urlencodedParser, (request, response) =>{
   })
 })
 
-app.get('/vragen-verwijderen', (request, response) => {
+router.get('/vragen-verwijderen', (request, response) => {
     response.render('delete-questions')
 })
 
@@ -56,6 +55,17 @@ app.get('/vragen-verwijderen', (request, response) => {
  async function fetchJsonWithBody(url, body) {
   return await fetch(url, body)
     .then((response) => response.json())
+		.catch((error) => error);
+}
+
+/**
+ * Wraps the fetch api and returns the response body parsed through json
+ * @param {*} url the api endpoint to address
+ * @returns the json response from the api endpoint
+ */
+ async function fetchJson(url, data) {
+	return await fetch(url, data)
+		.then((response) => response.json())
 		.catch((error) => error);
 }
 

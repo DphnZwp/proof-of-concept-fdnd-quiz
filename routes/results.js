@@ -1,8 +1,7 @@
 const express = require('express')
-const app = express()
 const router = express.Router()
 
-app.get('/resultaten', (request, response) => {
+router.get('/resultaten', (request, response) => {
   response.render('results')
 })
 

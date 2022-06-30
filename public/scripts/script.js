@@ -40,12 +40,6 @@ async function checkQuiz (selected) {
     scoreEl.innerText = score
     localStorage.setItem('score', score)
   }
-
-  form.quiz.forEach(input => {
-    if(input.value === rightAnswer) {
-      input.parentElement.classList.add('correct')
-    }
-  })
 }
 
 restart.addEventListener('click', () => {
