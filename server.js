@@ -14,7 +14,17 @@ app.use(express.static(path.join(__dirname + '/public')))
 
 // Routes
 app.get('/', (request, response) => {
-  response.render('index')
+  fetchJson(quizUrl).then(function (
+    jsonData
+  ) {
+    response.render('index', {
+      name: jsonData.data[0].name,
+    })
+  })
+})
+
+app.get('/resultaten', (request, response) => {
+  response.render('results')
 })
 
 // POST quiz
@@ -49,6 +59,39 @@ app.get('/vragen-aanmaken', async (request, response) => {
     response.render('add-questions')
 })
 
+// PUT quiz
+app.post('/quiz-bewerken', urlencodedParser, (request, response) =>{
+  const postData = {
+    method: 'PUT',
+    body: JSON.stringify(request.body),
+    headers: {'Content-Type': 'application/json'}
+  }
+  fetchJson(quizUrl, postData).then(function () {
+    response.render('edit')
+  })
+})
+
+app.get('/quiz-bewerken', (request, response) => {
+    response.render('edit')
+})
+
+// PUT question
+app.post('/vragen-bewerken', urlencodedParser, (request, response) => {
+  const postData = {
+    method: 'PUT',
+    body: JSON.stringify(request.body),
+    headers: {'Content-Type': 'application/json'}
+  }
+  fetchJson(url, postData).then((jsonData) => {
+    response.render('edit-questions')
+  })
+})
+
+app.get('/vragen-bewerken', async (request, response) => {
+    response.render('edit-questions')
+})
+
+
 // DELETE quiz
 app.post('/quiz-verwijderen', urlencodedParser, (request, response) =>{
   const postData = {
@@ -66,29 +109,27 @@ app.post('/quiz-verwijderen', urlencodedParser, (request, response) =>{
 })
 
 app.get('/quiz-verwijderen', (request, response) => {
-    response.render('delete', {
-      title: 'Smart zone toevoegen',
-    })
+    response.render('delete')
 })
 
 // DELETE question
 app.post('/vragen-verwijderen', urlencodedParser, (request, response) =>{
   const postData = {
-    method: 'delete',
-    body: JSON.stringify(request.body),
-    headers: {'Content-Type': 'application/json'}
+    id: request.body.quiz_id
   }
-  fetchJson(url, postData).then(function () {
-    response.render('delete', {
-      title: 'Smart zone toevoegen',
-    })
+  
+  fetchJsonWithBody(url, {
+    method: 'DELETE',
+    body: JSON.stringify(postData),
+    headers: {'Content-Type': 'application/json'}
+  }).then((data) => {
+    console.log(data)
+    response.render('delete-questions')
   })
 })
 
 app.get('/vragen-verwijderen', (request, response) => {
-    response.render('delete', {
-      title: 'Smart zone toevoegen',
-    })
+    response.render('delete-questions')
 })
 
 app.get('/quiz/:question_id', (request, response) => {
@@ -96,6 +137,7 @@ app.get('/quiz/:question_id', (request, response) => {
     let data = jsonData.data[0]
     console.log(data);
     let answers = [...data.incorrect_answer.split(','), data.correct_answer]
+    
     if(data.type == 'Meerkeuze') {
       response.render('question-mc', {
         question: data.question,
@@ -135,8 +177,8 @@ const server = app.listen(app.get('port'), () => {
  * @param {*} url the api endpoint to address
  * @returns the json response from the api endpoint
  */
- async function fetchJson(url) {
-	return await fetch(url)
+ async function fetchJson(url, data) {
+	return await fetch(url, data)
 		.then((response) => response.json())
 		.catch((error) => error);
 }

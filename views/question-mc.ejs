@@ -8,7 +8,7 @@
       </h1>
       <h2 class="score-board">
           Jouw score:
-          <span class="score-number">0</span>/<span class="answered-number">0</span>
+          <span class="score-number">0</span>/<span class="answered-number">7</span> vragen goed
       </h2>
     </article>
     <form class="quiz-form">
@@ -26,7 +26,7 @@
       <div class="form-buttons">
         <button type="submit">Verstuur</button>
         <% if(data.question_id === 7){ %>
-          <a href="/resultaten">Resultaten</a>
+          <a class="restart" href="/resultaten">Resultaten</a>
           <% } else { %>
             <a href="/quiz/<%- next + 1 %>">Volgende vraag</a>
           <% } %>

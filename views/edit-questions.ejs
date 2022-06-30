@@ -18,16 +18,16 @@
 
 <main>
   <article class="create-quiz">
-    <h1>Vragen en antwoorden aanmaken</h1>
-    <p>Maak hier een nieuwe vragen en antwoorden.</p>
+    <h1>Vragen en antwoorden bewerken</h1>
+    <p>Bewerk hier een nieuwe quiz en vragen</p>
     <div class="form-buttons">
-      <a class="link-button" href="/quiz-aanmaken">Terug naar quiz maken</a>
+      <a class="link-button" href="/quiz-bewerken">Terug naar quizzen bewerken</a>
     </div>
   </article>
 
   <section class="form-container">
     <div class="form-background">
-      <form class="post-form" action="/vragen-aanmaken" method="post">
+      <form class="post-form" action="/vragen-bewerken" method="post">
         <label for="question_id">question_id</label>
         <input type="number" name="question_id" id="question_id" />
         <label for="quiz_id">quiz_id</label>
@@ -47,11 +47,11 @@
         <label for="created_at">Datum</label>
         <input type="date" name="created_at" id="created_at" />
         <div class="form-buttons">
-          <button type="submit">Voeg de vraag toe</button>
+          <button type="submit">Bewerk vragen en antwoorden</button>
           <button type="reset">Annuleren</button>
         </div>
       </form>
-      <a class="link-button-blue" href="/">Ga naar je quizzen</a>
+      <a class="link-button-blue" href="/vragen-bewerken">Bewerk vragen en antwoorden</a>
     </div>
     <img src="/assets/css-quiz-image.png" alt="">
   </section>

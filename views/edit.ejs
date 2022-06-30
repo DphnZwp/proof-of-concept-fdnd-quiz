@@ -18,8 +18,8 @@
 
 <main>
   <article class="create-quiz">
-    <h1>Quiz en vragen verwijderen</h1>
-    <p>Verwijder hier een quiz en vragen.</p>
+    <h1>Quiz en vragen bewerken</h1>
+    <p>Bewerk hier een nieuwe quiz en vragen</p>
     <div class="form-buttons">
       <a class="link-button" href="/">Terug naar quizzen</a>
     </div>
@@ -27,16 +27,24 @@
 
   <section class="form-container">
     <div class="form-background">
-      <h2>Verwijder een quiz</h2>
-      <form class="post-form" action="/quiz-verwijderen" method="post">
+      <h2>Bewerk een quiz</h2>
+      <form class="post-form" action="/quiz-bewerken" method="post">
         <label for="quiz_id">quiz_id</label>
         <input type="number" name="quiz_id" id="quiz_id" />
+        <label for="name">Quiz naam</label>
+        <input type="text" name="name" id="name" />
+        <label for="category">Categorie</label>
+        <input type="text" name="category" id="category" />
+        <label for="image">Afbeelding</label>
+        <input type="text" name="image" id="image" />
+        <label for="created_at">Datum</label>
+        <input type="date" name="created_at" id="created_at" />
         <div class="form-buttons">
-          <button type="submit">Verwijder de quiz</button>
+          <button type="submit">Bewerk de quiz</button>
           <button type="reset">Annuleren</button>
         </div>
       </form>
-      <a class="link-button-blue" href="/vragen-verwijderen">Verwijder vragen</a>
+      <a class="link-button-blue" href="/vragen-bewerken">Bewerk vragen en antwoorden</a>
     </div>
     <img src="/assets/css-quiz-image.png" alt="">
   </section>
