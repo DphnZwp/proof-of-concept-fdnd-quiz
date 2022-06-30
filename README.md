@@ -15,7 +15,8 @@ Een Quiz ontwerpen en maken, een nieuwe Kahoot waarmee het makkelijker is om een
 ## Beschrijving
 Als docent kan je een quiz en vragen toevoegen die studenten kunnen spelen. Wanneer studenten de vragen goed beantwoorden krijgen ze punten. 
 
-🌐 link
+🌐 [link](https://fdnd-quiz.herokuapp.com/)
+
 ![screencapture-localhost-9000-2022-06-30-21_23_40](https://user-images.githubusercontent.com/69635977/176761785-e5a2a049-e904-4eac-9fc4-b4ba88ce9600.png)
 
 ## Kenmerken
