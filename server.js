@@ -52,14 +52,16 @@ app.get('/vragen-aanmaken', async (request, response) => {
 // DELETE quiz
 app.post('/quiz-verwijderen', urlencodedParser, (request, response) =>{
   const postData = {
-    method: 'delete',
-    body: JSON.stringify(request.body),
-    headers: {'Content-Type': 'application/json'}
+    id: request.body.quiz_id
   }
-  fetchJson(quizUrl, postData).then(function () {
-    response.render('delete', {
-      title: 'Smart zone toevoegen',
-    })
+  
+  fetchJsonWithBody(quizUrl, {
+    method: 'DELETE',
+    body: JSON.stringify(postData),
+    headers: {'Content-Type': 'application/json'}
+  }).then((data) => {
+    console.log(data)
+    response.render('delete')
   })
 })
 
@@ -128,13 +130,6 @@ const server = app.listen(app.get('port'), () => {
   console.log(`Application started on port: ${app.get('port')}`)
 })
 
-// Fetch
-async function fetchJson(quizUrl) {
-  return await fetch(quizUrl)
-    .then((response) => response.json())
-    .catch((error) => error)
-}
-
 /**
  * Wraps the fetch api and returns the response body parsed through json
  * @param {*} url the api endpoint to address
@@ -143,6 +138,18 @@ async function fetchJson(quizUrl) {
  async function fetchJson(url) {
 	return await fetch(url)
 		.then((response) => response.json())
+		.catch((error) => error);
+}
+
+/**
+ * 
+ * @param {*} url 
+ * @param {*} body 
+ * @returns 
+ */
+async function fetchJsonWithBody(url, body) {
+  return await fetch(url, body)
+    .then((response) => response.json())
 		.catch((error) => error);
 }
 
