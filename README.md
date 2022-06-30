@@ -13,9 +13,10 @@ Een Quiz ontwerpen en maken, een nieuwe Kahoot waarmee het makkelijker is om een
   * [Licentie](#licentie)
 
 ## Beschrijving
-<!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+Als docent kan je een quiz en vragen toevoegen die studenten kunnen spelen. Wanneer studenten de vragen goed beantwoorden krijgen ze punten. 
+
+🌐 link
+![screencapture-localhost-9000-2022-06-30-21_23_40](https://user-images.githubusercontent.com/69635977/176761785-e5a2a049-e904-4eac-9fc4-b4ba88ce9600.png)
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
