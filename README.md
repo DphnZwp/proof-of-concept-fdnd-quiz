@@ -7,8 +7,7 @@ Een Quiz ontwerpen en maken, een nieuwe Kahoot waarmee het makkelijker is om een
 
   * [Beschrijving](#beschrijving)
   * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
-  * [Gebruik](#gebruik)
+  * [Installatie & Gebruik](#installatie)
   * [Bronnen](#bronnen)
   * [Licentie](#licentie)
 
@@ -19,12 +18,39 @@ Als docent kan je een quiz en vragen toevoegen die studenten kunnen spelen. Wann
 
 ![screencapture-localhost-9000-2022-06-30-21_23_40](https://user-images.githubusercontent.com/69635977/176761785-e5a2a049-e904-4eac-9fc4-b4ba88ce9600.png)
 
-## Kenmerken
+## 💣Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
+## Kenmerken
+- 💀 HTML5
+- 🧍 CSS3
+- ⚽ JavaScript
+- 🐸 Node.js
+- 🥇 Express
+- 🤳 Socket.IO
 
-## Installatie
+### Tools gebruikt:
+- 💻 Visual Studio Code
 
-## Gebruik
+## 💫Installatie & Gebruik
+1. Clone of download deze respository.
+2. Ga naar de root directory van het project.
+3. Open een nieuwe terminal en typ "npm run start" of "npm run dev".
+
+Hieronder zijn commandlines van HTTPS en SSH die je kunt uitvoeren in de opdrachtprompt om het project te clonen en om naar de root directory te gaan.
+
+**Installeren met HTTPS**
+
+```
+git clone https://github.com/DphnZwp/performance-matters-coding-the-curbs
+cd https://github.com/DphnZwp/performance-matters-coding-the-curbs.git
+```
+
+**Installeren met SSH**
+```
+git@github.com:DphnZwp/performance-matters-coding-the-curbs.git
+cd performance-matters-coding-the-curbs.git
+
+```
 
 ## Bronnen
 
